@@ -72,5 +72,6 @@ loginForm.addEventListener('submit', e => {
   window.dispatchEvent(new Event('authChanged'));
   //*******************************************
 
-  window.location.href = '../PaginaP.html'; //regresamos al inicio
+  window.location.href = '../index.html'; //regresamos al inicio
 });
+
