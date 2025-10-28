@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda RPG - Full Chilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/pc.css">
+</head>
+<body>
+  <h1>Juegos de PC Destacados</h1>
+  <div class="game-container" id="gameContainer">
+    <!-- Juegos serán inyectados por JS -->
+  </div>
+
+  <script>
+    const juegosRPG = [
+       {
+        titulo: "League of Legends",
+        tiendas: [],
+        precio: 0,
+        original: 0,
+        imagen: "../imagenes/jpg/img32.jpg",
+        rating: "83%",
+        reviews: "Positivas"
+      },
+      {
+        titulo: "Counter-Strike 2",
+        tiendas: ["steam"],
+        precio: 0,
+        original: 0,
+        imagen: "../imagenes/jpg/img33.jpg",
+        rating: "88%",
+        reviews: "Muy Positivas"
+      },
+      {
+        titulo: "Red Dead Redemption 2",
+        tiendas: ["steam", "epic"],
+        precio: 39.99,
+        original: 59.99,
+        imagen: "../imagenes/avif/img34.avif",
+        rating: "96%",
+        reviews: "img."
+      },
+     {
+        titulo: "Cyberpunk 2077",
+        tiendas: ["steam", "epic", "gog"],
+        precio: 29.99,
+        original: 59.99,
+        imagen: "../imagenes/jpg/img35.jpg",
+        rating: "86%",
+        reviews: "Muy Positivas"
+      },
+    ];
+
+    const contenedor = document.getElementById("gameContainer");
+
+    juegosRPG.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+        <div class="game-info">
+          <div class="game-title">${juego.titulo}</div>
+          <div class="platforms">${juego.plataformas}</div>
+          <div class="price">$${juego.precio.toFixed(2)} <span class="discount">$${juego.original.toFixed(2)}</span></div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>

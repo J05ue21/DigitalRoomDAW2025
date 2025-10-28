@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda RPG - Full Chilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/xbox.css">
+</head>
+<body>
+  <h1>Juegos de XBOX SERIES X Destacados</h1>
+  <div class="game-container" id="gameContainer">
+    <!-- Juegos serán inyectados por JS -->
+  </div>
+
+  <script>
+    const juegosRPG = [
+       {
+        titulo: "Starfield",
+        plataformas: "Xbox Series X|S, PC",
+        precio: 69.99,
+        original: 79.99,
+        imagen: "../imagenes/jpg/img28.jpg",
+        gamepass: true
+      },
+      {
+        titulo: "Microsoft Flight Simulator",
+        plataformas: "Xbox Series X|S, PC",
+        precio: 59.99,
+        original: 69.99,
+        imagen: "../imagenes/jpg/img29.jpg",
+        gamepass: true
+      },
+      {
+        titulo: "Fable",
+        plataformas: "Xbox Series X|S, PC",
+        precio: 69.99,
+        original: 79.99,
+        imagen: "../imagenes/jpg/img30.jpg",
+        gamepass: true
+      },
+      {
+        titulo: "Gears 5",
+        plataformas: "Xbox Series X|S, Xbox One, PC",
+        precio: 39.99,
+        original: 59.99,
+        imagen: "../imagenes/jpg/img31.jpg",
+        gamepass: true
+      }
+    ];
+
+    const contenedor = document.getElementById("gameContainer");
+
+    juegosRPG.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+        <div class="game-info">
+          <div class="game-title">${juego.titulo}</div>
+          <div class="platforms">${juego.plataformas}</div>
+          <div class="price">$${juego.precio.toFixed(2)} <span class="discount">$${juego.original.toFixed(2)}</span></div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>

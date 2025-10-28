@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pago | Digital Room</title>
+  <link rel="stylesheet" href="../css/pago.css" />
+</head>
+<body>
+  <div class="pago-container">
+    <h1>Finalizar Compra</h1>
+
+    <div class="bloque">
+      <h2>Selecciona tu juego</h2>
+      <select id="selector-juego"></select>
+    </div>
+
+    <div class="bloque resumen-juego">
+      <h2>Resumen del Juego</h2>
+      <p id="nombre-juego">Nombre: -</p>
+      <p id="precio-juego">Precio: $0.00</p>
+    </div>
+
+    <div class="bloque">
+      <h2>Método de Pago</h2>
+      <select id="selector-metodo">
+        <option value="tarjeta">Tarjeta de crédito</option>
+        <option value="paypal">PayPal</option>
+        <option value="cripto">Cripto</option>
+      </select>
+
+      <div id="formulario-pago"></div>
+    </div>
+
+    <div class="bloque total-final">
+      <h2>Total a Pagar</h2>
+      <p id="total-juego">$0.00</p>
+    </div>
+
+    <div class="bloque aceptar">
+      <input type="checkbox" id="terminos" />
+      <label for="terminos">Acepto los términos y condiciones de compra digital</label>
+    </div>
+
+    <button class="btn" onclick="finalizarCompra()">Finalizar compra</button>
+    <p class="exito" id="mensaje-exito" style="display:none;">✅ ¡Gracias por tu compra!</p>
+  </div>
+
+  <script src="../js/pago.js"></script>
+</body>
+</html>

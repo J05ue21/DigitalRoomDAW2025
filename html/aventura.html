@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda RPG - Full Chilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/aventura.css">
+</head>
+<body>
+  <h1>Juegos de AVENTURA Destacados</h1>
+  <div class="game-container" id="gameContainer">
+  </div>
+
+  <script>
+    const juegosRPG = [
+       {
+        titulo: "Hogwarts Legacy",
+        plataformas: "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        precio: 39.99,
+        original: 59.99,
+        imagen: "../imagenes/avif/img16.avif"
+      },
+      {
+        titulo: "The Legend of Zelda: Tears of the Kingdom",
+        plataformas: "Nintendo Switch",
+        precio: 49.99,
+        original: 59.99,
+        imagen: "../imagenes/jpg/img17.jpg"
+      },
+      {
+        titulo: "Uncharted 4: A Thief's End",
+        plataformas: "PS4, PS5, PC",
+        precio: 19.99,
+        original: 39.99,
+        imagen: "../imagenes/avif/img18.avif"
+      },
+      {
+        titulo: "Alan Wake 2",
+        plataformas: "PC, PS5, Xbox Series X/S",
+        precio: 44.99,
+        original: 59.99,
+        imagen: "../imagenes/avif/img19.avif"
+      }
+    ];
+
+    const contenedor = document.getElementById("gameContainer");
+
+    juegosRPG.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+        <div class="game-info">
+          <div class="game-title">${juego.titulo}</div>
+          <div class="platforms">${juego.plataformas}</div>
+          <div class="price">$${juego.precio.toFixed(2)} <span class="discount">$${juego.original.toFixed(2)}</span></div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>

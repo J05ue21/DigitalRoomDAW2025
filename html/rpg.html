@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda RPG - Full Chilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/rpg.css">
+</head>
+<body>
+  <h1>Juegos RPG Destacados</h1>
+  <div class="game-container" id="gameContainer">
+    <!-- Juegos serán inyectados por JS -->
+  </div>
+
+  <script>
+    const juegosRPG = [
+      {
+        titulo: "Skyrim: Anniversary Edition",
+        plataformas: "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        precio: 29.99,
+        original: 49.99,
+        imagen: "../imagenes/jpg/img4.jpg"
+      },
+      {
+        titulo: "Final Fantasy VII Remake",
+        plataformas: "PS4, PS5, PC",
+        precio: 39.99,
+        original: 69.99,
+        imagen: "../imagenes/jpg/img5.jpg"
+      },
+      {
+        titulo: "Dragon Age: Inquisition",
+        plataformas: "PC, PS4, Xbox One",
+        precio: 9.99,
+        original: 19.99,
+        imagen: "../imagenes/jpg/img6.jpg"
+      }
+      ,
+     {
+        titulo: "Mass Effect: Legendary Edition",
+        plataformas: "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        precio: 29.99,
+        original: 59.99,
+        imagen: "../imagenes/jpg/img7.jpg"
+      }
+    ];
+
+    const contenedor = document.getElementById("gameContainer");
+
+    juegosRPG.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+        <div class="game-info">
+          <div class="game-title">${juego.titulo}</div>
+          <div class="platforms">${juego.plataformas}</div>
+          <div class="price">$${juego.precio.toFixed(2)} <span class="discount">$${juego.original.toFixed(2)}</span></div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>

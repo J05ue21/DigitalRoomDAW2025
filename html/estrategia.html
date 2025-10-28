@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda RPG - Full Chilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estrategia.css">
+</head>
+<body>
+  <h1>Juegos de ESTRATEGIA Destacados</h1>
+  <div class="game-container" id="gameContainer">
+    <!-- Juegos serán inyectados por JS -->
+  </div>
+
+  <script>
+    const juegosRPG = [
+       {
+        titulo: "Civilization VI",
+        plataformas: "PC, PS4, Xbox One, Nintendo Switch, iOS, Android",
+        precio: 29.99,
+        original: 59.99,
+        imagen: "../imagenes/avif/img12.avif"
+      },
+      {
+        titulo: "Total War: Warhammer III",
+        plataformas: "PC, Mac",
+        precio: 39.99,
+        original: 59.99,
+        imagen: "../imagenes/jpg/img13.jpg"
+      },
+      {
+        titulo: "Age of Empires IV",
+        plataformas: "PC, Xbox Series X/S",
+        precio: 34.99,
+        original: 59.99,
+        imagen: "../imagenes/webp/img14.webp"
+      },
+      {
+        titulo: "XCOM 2",
+        plataformas: "PC, PS4, Xbox One, Nintendo Switch, iOS",
+        precio: 14.99,
+        original: 39.99,
+        imagen: "../imagenes/webp/img15.webp"
+      }
+    ];
+
+    const contenedor = document.getElementById("gameContainer");
+
+    juegosRPG.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+        <div class="game-info">
+          <div class="game-title">${juego.titulo}</div>
+          <div class="platforms">${juego.plataformas}</div>
+          <div class="price">$${juego.precio.toFixed(2)} <span class="discount">$${juego.original.toFixed(2)}</span></div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>

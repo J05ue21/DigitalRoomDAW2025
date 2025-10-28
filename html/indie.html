@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda RPG - Full Chilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/indie.css">
+</head>
+<body>
+  <h1>Juegos INDIE Destacados</h1>
+  <div class="game-container" id="gameContainer">
+    <!-- Juegos serán inyectados por JS -->
+  </div>
+
+  <script>
+    const juegosRPG = [
+       {
+        titulo: "Hollow Knight",
+        plataformas: "PC, Switch, PS4, Xbox One",
+        precio: 14.99,
+        original: 19.99,
+        imagen: "../imagenes/webp/img20.webp"
+      },
+      {
+        titulo: "Stardew Valley",
+        plataformas: "PC, Switch, PS4, Xbox One, iOS, Android",
+        precio: 12.99,
+        original: 14.99,
+        imagen: "../imagenes/jpg/img21.jpg"
+      },
+      {
+        titulo: "Celeste",
+        plataformas: "PC, Switch, PS4, Xbox One",
+        precio: 19.99,
+        original: 24.99,
+        imagen: "../imagenes/jpg/img22.jpg"
+      },
+      {
+        titulo: "Undertale",
+        plataformas: "PC, Switch, PS4, Xbox One",
+        precio: 9.99,
+        original: 14.99,
+        imagen: "../imagenes/png/img23.png"
+      }
+    ];
+
+    const contenedor = document.getElementById("gameContainer");
+
+    juegosRPG.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+        <div class="game-info">
+          <div class="game-title">${juego.titulo}</div>
+          <div class="platforms">${juego.plataformas}</div>
+          <div class="price">$${juego.precio.toFixed(2)} <span class="discount">$${juego.original.toFixed(2)}</span></div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>

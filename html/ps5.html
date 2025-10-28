@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda RPG - Full Chilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/ps5.css">
+</head>
+<body>
+  <h1>Juegos de PS5 Destacados</h1>
+  <div class="game-container" id="gameContainer">
+    <!-- Juegos serán inyectados por JS -->
+  </div>
+
+  <script>
+    const juegosRPG = [
+       {
+        titulo: "Ratchet & Clank: Rift Apart",
+        plataformas: "PS5 Exclusivo",
+        precio: 59.99,
+        original: 69.99,
+        imagen: "../imagenes/avif/img24.avif"
+      },
+      {
+        titulo: "Returnal",
+        plataformas: "PS5 Exclusivo",
+        precio: 49.99,
+        original: 69.99,
+        imagen: "../imagenes/avif/img25.avif"
+      },
+      {
+        titulo: "Demon's Souls",
+        plataformas: "PS5 Exclusivo",
+        precio: 49.99,
+        original: 69.99,
+        imagen: "../imagenes/webp/img26.webp"
+      },
+      {
+        titulo: "Spider-Man: Miles Morales",
+        plataformas: "PS5, PS4",
+        precio: 39.99,
+        original: 49.99,
+        imagen: "../imagenes/webp/img27.webp"
+      }
+    ];
+
+    const contenedor = document.getElementById("gameContainer");
+
+    juegosRPG.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+        <div class="game-info">
+          <div class="game-title">${juego.titulo}</div>
+          <div class="platforms">${juego.plataformas}</div>
+          <div class="price">$${juego.precio.toFixed(2)} <span class="discount">$${juego.original.toFixed(2)}</span></div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>
